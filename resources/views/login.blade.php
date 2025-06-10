@@ -20,8 +20,8 @@
         <div class="error-message" style="color:red;">
           {{ $errors->first() }}
         </div>
-      @endif
-
+      @endifs
+      
       <div class="input_box">
         <input type="text" name="login" placeholder="Enter Username or Email" required
           value="{{ old('login', request()->cookie('remembered_nama')) }}">
