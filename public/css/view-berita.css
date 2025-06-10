@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container-navbar {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 3px; 
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 3px;
+  }
+  
+  /* Styling untuk logo */
+  .logo img {
+    width: 50px; /* Sesuaikan ukuran logo */
+    height: auto;
+  }
+  
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+  }
+  
+  /* Styling untuk search bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; /* Jarak antara search bar dan profil */
+  }
+  
+  .search-container input {
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 13px;
+    width: 300px;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, .2);
+    background-color: #D9D9D9; 
+  }
+  
+  .search-container input:focus {
+    outline: none;
+    border: 2px solid #ffffff;
+  }
+  
+  .profile img {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+  }
+
+.navbar-kedua {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #000000;
+    color: white;
+    width: 100%;
+  }
+  
+  .kategori {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .kategori li {
+    list-style-type: none; /* hilangkan bullet point */
+    display: inline-block; /* supaya li berjajar horizontal */
+    margin-right: 50px;    /* beri jarak antar kategori */
+  }
+
+  .kategori li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 2px solid #333;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-transform: capitalize;
+    background-color: #D9D9D9; 
+  }
+  
+  .kategori li a:hover {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .iklan1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+    height: 150px;
+    background-color: #D9D9D9;
+  }
+
+  .main-content {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .post-berita {
+    width: 70%;
+    padding: 10px 15px 0px 30px;
+    box-sizing: border-box;
+  }
+
+  .iklan2 {
+    display: flex;
+    align-items: center;           /* vertikal */
+    justify-content: center;       /* horizontal */
+    margin: 10px auto;             /* tengah secara horizontal */
+    width: 30%;
+    box-sizing: border-box;               /* beri tinggi yang jelas */
+    background-color: #D9D9D9;
+  }
+
+.garis-pembatas {
+    height: 2px;
+    background-color: #000000;
+    margin: 10px auto;
+    width: 100%; /* bisa sesuaikan dengan layout */
+}
+
+  .judul-berita {
+    margin-bottom: 10px;
+  }
+
+  .judul-berita h1{
+    font-size: 35px;
+    text-transform: capitalize;
+  }
+
+  .keterangan{
+    font-size: 15px;
+    margin: 15px 0 10px 0;
+  }
+
+  .keterangan a{
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  .jurnalis{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0 15px 0;
+  }
+
+  .jurnalis img{
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    align-items: center;
+  }
+
+  .jurnalis img + img {
+    margin-left: 15px; 
+  }
+
+  .jurnalis img:last-of-type {
+    margin-right: 30px;
+  }
+
+  .jurnalis p{
+    text-transform: capitalize;
+  }
+
+  .cover-berita img{
+    height: auto;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: 2px solid black;
+  }
+
+  .cover-berita{
+    margin: 20px 0 15px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .isi-berita{
+    margin: 20px 0 15px 0;
+  }
+
+  .action-button{
+    background-color: #D9D9D9;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    display: flex;
+    margin: 40px auto;
+    gap: 96px;  
+  }
+
+  .action-button button {
+    padding: 10px 16px;
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .action-button button:hover {
+    background-color: #000000;
+  }
+
+  .judul-komentar-berita{
+    margin: 10px 0 10px 0;
+  }
+
+  .komentar{
+    background-color: #D9D9D9;
+    border: 2px solid #000000;
+    border-radius: 10px;
+  }
+
+  /* Bagian input komentar */
+  .tulis-komentar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 10px;
+  }
+
+.tulis-komentar input[type="text"] {
+  flex-grow: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.tulis-komentar input[type="text"]:focus {
+  border-color: #4a90e2;
+}
+
+.send-button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 0 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:hover {
+  background-color: #357ABD;
+}
+
+/* Bagian komentar */
+.comment {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  align-items: flex-start;
+}
+
+/* Foto profil */
+.profile-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+  object-fit: cover;
+  background-color: #ddd; /* jika gambar kosong */
+}
+
+/* Bagian teks komentar */
+.comment-section {
+  flex: 1;
+}
+
+/* Header komentar (nama & waktu) */
+.comment-header {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.username {
+  font-weight: 600;
+  color: #222;
+}
+
+.time-elapsed {
+  font-style: italic;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Isi komentar */
+.comment-text {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Aksi tombol like/dislike */
+.comment-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  gap: 12px;
+  transition: transform 0.2s;
+}
+
+.comment-actions button:hover {
+  transform: scale(1.2);
+  color: #4a90e2;
+}

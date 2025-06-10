@@ -11,18 +11,32 @@
 
 <body>
   <div class="wrapper">
-    <form action="daftar.php" method="POST">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
+    <form action="{{ route('daftar') }}" method="POST">
+      @csrf
       <h1>Daftar Akun</h1>
       <div class="input_box_username">
-        <input type="text" placeholder="Enter Username" required>
+        <input type="text" name="nama" placeholder="Enter Nama" value="{{ old('nama') }}" required>
+      </div>
+      <div class="input_box_email">
+        <input type="email" name="email" placeholder="Enter Email" value="{{ old('email') }}" required>
       </div>
       <div class="input_box_password">
-        <input type="password" id="password" placeholder="Enter Password" required>
-        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
       </div>
       <button type="submit" class="btn">Daftar</button>
       <div class="login_akun">
-        <p>Sudah punya akun?<a href="#">Masuk Login</a></p>
+        <p>Sudah punya akun?<a href="{{ route('login') }}">Masuk Login</a></p>
       </div>
     </form>
   </div>

@@ -1,3 +1,31 @@
+{{-- resources/views/kategori.blade.php --}}
+
+@php
+    $topBeritaList = [
+        [
+            'judul' => 'Unboxing Motorola Edge 60 Fusion Indonesia, Isi Kemasan Lengkap Tanpa Plastik',
+            'gambar' => 'images/post-berita.jpg',
+            'tanggal' => '05/06/2025, 19:00 WIB',
+        ],
+        [
+            'judul' => 'Cara Melacak Nomor HP dengan Google Maps, Mudah dan Praktis',
+            'gambar' => 'images/post-berita.jpg',
+        ],
+        [
+            'judul' => 'Bukan Karena Teknologi, Ini Alasan Harga Smartphone Bisa Meroket Tahun Ini',
+            'gambar' => 'images/post-berita.jpg',
+        ],
+        [
+            'judul' => 'Pengalaman Buruk Beli HP Vivo di Official Store, Unit Baru Ternyata Ada Bekas Sidik Jari',
+            'gambar' => 'images/post-berita.jpg',
+        ],
+        [
+            'judul' => 'Review Kamera HP Mid-Range: Lebih Tajam dari iPhone?',
+            'gambar' => 'images/post-berita.jpg',
+        ],
+    ];
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/kategori.css') }}">
-    <title>Homepage Portal Berita</title>
+    <title>Kategori Berita</title>
 </head>
 <body>
     <nav class="navbar">
@@ -40,6 +68,36 @@
                 <h1>
                     sport
                 </h1>
+            </div>
+            <div class="garis-pembatas1"></div>
+            <div class="top-berita" id="top-berita">
+
+                {{-- Headline Utama --}}
+                <a href="{{ url('view-berita.blade.php') }}" class="headline-link">
+                    <div class="headline-utama" style="position: relative;">
+                        <img src="{{ asset($topBeritaList[0]['gambar']) }}" alt="Gambar Headline" class="headline-gambar">
+                        <div class="headline-overlay">
+                            <span class="headline-kategori">HEADLINE</span>
+                            <h2 class="headline-judul">{{ $topBeritaList[0]['judul'] }}</h2>
+                            <p class="headline-tanggal">{{ $topBeritaList[0]['tanggal'] }}</p>
+                        </div>
+                    </div>
+                </a>
+
+                {{-- 4 Berita Di Bawah Headline --}}
+                <div class="sub-berita-container">
+                    @foreach ($topBeritaList as $index => $berita)
+                        @if ($index > 0)
+                            <a href="{{ url('view-berita.blade.php') }}" class="sub-berita-link">
+                                <div class="sub-berita-item">
+                                    <img src="{{ asset($berita['gambar']) }}" alt="Gambar Berita" class="sub-berita-gambar">
+                                    <p class="sub-berita-judul">{{ $berita['judul'] }}</p>
+                                </div>
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
+            <div class="garis-pembatas1"></div>
             </div>
             <div class="teks">
                 <h4>update berita</h4>
@@ -168,5 +226,18 @@ Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza con
             <h1>iklan</h1>
         </div>
     </main>
+
+<script>
+    const beritaList = @json($topBeritaList);
+    let index = 1;
+    const max = beritaList.length;
+    const beritaText = document.getElementById('berita-text');
+
+    setInterval(() => {
+        if (index >= max) index = 0;
+        beritaText.innerText = beritaList[index];
+        index++;
+    }, 5000);
+</script>
 </body>
 </html>
