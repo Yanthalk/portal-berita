@@ -68,7 +68,7 @@
                             <p>{{ $article['description'] ?? 'Tidak ada deskripsi.' }}</p>
                         </div>
                         <div class="category-waktu">
-                            <p>{{ ucfirst($article['category'][0] ?? 'umum') }}</p>
+                            <p>{{ ucfirst($article['category'][0] ?? 'Umum') }}</p>
                             <p>{{ \Carbon\Carbon::parse($article['pubDate'])->translatedFormat('d F Y, H:i') }}</p>
                         </div>
                     </div>

@@ -37,23 +37,37 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="{{ asset('images/logo.jpg') }}" alt="Logo">
+        <div class="Nama">
+            <a href="{{ route('homepage') }}" class="nama1">
+                <h1>Portal</h1>
+            </a>
+            <a href="{{ route('homepage') }}" class="nama2">
+                <h1>Berita</h1>
+            </a>
         </div>
         <div class="navbar-right">
             <div class="search-container">
-                <input type="text" placeholder="Search...">
+                <form action="{{ route('berita.cari') }}" method="GET" id="search-form">
+                    <input type="text" id="search-input" name="query" placeholder="Search...">
+                </form>
+                <div id="search-results" class="search-results"></div>
             </div>
             <div class="profile">
-                <img src="{{ asset('images/profile.jpg') }}" alt="Profile Picture">
+                @auth
+                    <a href="{{ route('profile') }}" class="btn-login">Profile</a>
+                @endauth
+
+                @guest
+                    <a href="{{ route('login') }}" class="btn-login">Login</a>
+                @endguest
             </div>
         </div>
     </nav>
     <div class="container-navbar">
         <nav class="navbar-kedua">
             <ul class="kategori">
-                @foreach (range(1,6) as $item)
-                    <li><a href="#">Sport</a></li>
+                @foreach (config('kategori') as $key => $label)
+                    <li><a href="{{ route('kategori') }}">{{ $label }}</a></li>
                 @endforeach
             </ul>
         </nav>
@@ -103,94 +117,6 @@
                 <h4>update berita</h4>
             </div>
             <div class="garis-pembatas1"></div>
-            <div class="update-berita">
-                <div class="gambar-berita">
-                    <img src="{{ asset('images/post-berita.jpg') }}" alt="post-berita">
-                </div>
-                <div class="isi-berita">
-                    <div class="judul">
-                        <h1>
-                            valorant vct kickoff
-                        </h1>
-                    </div>
-                    <div class="deskripsi">
-                        <p>
-                            Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look.
-Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content.
-                        </p>
-                    </div>
-                    <div class="category-waktu">
-                        <p>kategori</p>
-                        <p>waktu</p>
-                    </div>
-                </div>
-            </div>
-            <div class="update-berita">
-                <div class="gambar-berita">
-                    <img src="{{ asset('images/post-berita.jpg') }}" alt="post-berita">
-                </div>
-                <div class="isi-berita">
-                    <div class="judul">
-                        <h1>
-                            valorant vct kickoff
-                        </h1>
-                    </div>
-                    <div class="deskripsi">
-                        <p>
-                            Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look.
-Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content.
-                        </p>
-                    </div>
-                    <div class="category-waktu">
-                        <p>kategori</p>
-                        <p>waktu</p>
-                    </div>
-                </div>
-            </div>
-            <div class="update-berita">
-                <div class="gambar-berita">
-                    <img src="{{ asset('images/post-berita.jpg') }}" alt="post-berita">
-                </div>
-                <div class="isi-berita">
-                    <div class="judul">
-                        <h1>
-                            valorant vct kickoff
-                        </h1>
-                    </div>
-                    <div class="deskripsi">
-                        <p>
-                            Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look.
-Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content.
-                        </p>
-                    </div>
-                    <div class="category-waktu">
-                        <p>kategori</p>
-                        <p>waktu</p>
-                    </div>
-                </div>
-            </div>
-            <div class="update-berita">
-                <div class="gambar-berita">
-                    <img src="{{ asset('images/post-berita.jpg') }}" alt="post-berita">
-                </div>
-                <div class="isi-berita">
-                    <div class="judul">
-                        <h1>
-                            valorant vct kickoff
-                        </h1>
-                    </div>
-                    <div class="deskripsi">
-                        <p>
-                            Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look.
-Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content.
-                        </p>
-                    </div>
-                    <div class="category-waktu">
-                        <p>kategori</p>
-                        <p>waktu</p>
-                    </div>
-                </div>
-            </div>
             <div class="update-berita">
                 <div class="gambar-berita">
                     <img src="{{ asset('images/post-berita.jpg') }}" alt="post-berita">

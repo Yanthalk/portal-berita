@@ -32,9 +32,9 @@ Route::get('/ubahprof', function () {
     return view('ubah-profile');
 })->name('ubah-profile');
 
-Route::get('/kate-selec', function () {
-    return view('kategori-selector');
-})->name('kategori-selector');
+Route::get('/kategori', function () {
+    return view('kategori');
+})->name('kategori');
 
 Route::post('/logout', function () {
     Auth::logout(); 

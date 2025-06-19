@@ -9,19 +9,24 @@ class CategorySeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('category')->insert([
-            [
-                'category_id' => 1,
-                'nama_kategori' => 'Politik',
-            ],
-            [
-                'category_id' => 2,
-                'nama_kategori' => 'Teknologi',
-            ],
-            [
-                'category_id' => 3,
-                'nama_kategori' => 'Kesehatan',
-            ],
-        ]);
+        $categories = [
+            'Politik',
+            'Teknologi',
+            'Kesehatan',
+            'Berita Utama',
+            'Bisnis',
+            'Kriminal',
+            'Pendidikan',
+            'Hiburan',
+            'Makanan',
+            'Olahraga'
+        ];
+
+        foreach ($categories as $category) {
+            DB::table('category')->updateOrInsert(
+                ['nama_kategori' => $category], // kondisi pencocokan
+                ['nama_kategori' => $category]  // nilai yang akan di-set/update
+            );
+        }
     }
 }

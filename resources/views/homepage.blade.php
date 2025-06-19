@@ -40,7 +40,7 @@
         <nav class="navbar-kedua">
             <ul class="kategori">
                 @foreach (config('kategori') as $key => $label)
-                    <li><a href="#">{{ $label }}</a></li>
+                    <li><a href="{{ route('kategori') }}">{{ $label }}</a></li>
                 @endforeach
             </ul>
         </nav>
@@ -51,11 +51,6 @@
     <div class="garis-pembatas"></div>
     <main class="main-content">
         <div class="home-berita">
-            <div class="atur-berita">
-                <a href="{{ route('kategori-selector') }}">
-                    <button type="button" class="btn-atur">atur konten berita</button>
-                </a>
-            </div>
             <div class="teks">
                 <h4>update berita</h4>
             </div>
@@ -73,7 +68,7 @@
                             <p>{{ $article['description'] ?? 'Tidak ada deskripsi.' }}</p>
                         </div>
                         <div class="category-waktu">
-                            <p>{{ ucfirst($article['category'][0] ?? 'umum') }}</p>
+                            <p>{{ ucfirst($article['category'][0] ?? 'Umum') }}</p>
                             <p>{{ \Carbon\Carbon::parse($article['pubDate'])->translatedFormat('d F Y, H:i') }}</p>
                         </div>
                     </div>

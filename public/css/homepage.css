@@ -146,39 +146,6 @@
     box-sizing: border-box;
   }
 
-  .atur-berita {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0 10px 0;   
-  }
-
-  a {
-    text-decoration: none; /* hilangkan garis bawah dari link */
-  }
-
-  .btn-atur {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    width: 350px;
-    background-color: #D9D9D9;
-    color: black;
-    border: 1px solid #333;
-    border-radius: 13px;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: capitalize;
-}
-
-.btn-atur:hover {
-  background-color: #333;
-  color: white;
-  border-color: #555;
-  transition: all 0.3s ease-in-out;
-}
-
 .garis-pembatas {
     height: 2px;
     background-color: #000000;
