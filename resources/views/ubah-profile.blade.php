@@ -11,7 +11,7 @@
     <main class="container-1">
         <div class="back-judul">
             <div class="back">
-                <a href="{{ url()->previous() }}">
+                <a href="{{ route('profile') }}">
                     <i class='bx bx-arrow-back'></i>
                 </a>
             </div>
@@ -20,14 +20,6 @@
             </div>
         </div>
         <div class="garis-pembatas"></div>
-        <div class="foto-profile">
-            <h1>foto<br>profile</h1>
-        </div>
-        <div class="teks1">
-            <p>
-                Ubah Foto Profile
-            </p>
-        </div>
         <div class="teks2">
             <p>
                 Ubah Username
@@ -35,6 +27,14 @@
         </div>
         <div class="enter-username">
             <input type="text" name="username" placeholder="Enter Username" required>
+        </div>
+        <div class="teks2">
+            <p>
+                Ubah Email
+            </p>
+        </div>
+        <div class="enter-username">
+            <input type="text" name="username" placeholder="Enter Email" required>
         </div>
         <div class="container-btn">
             <button type="submit" class="btn">Simpan</button>

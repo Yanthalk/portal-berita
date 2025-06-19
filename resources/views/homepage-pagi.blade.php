@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
-    <title>Homepage Portal Berita</title>
+    <title>Halaman Berita - Portal Berita</title>
     <script src="{{ asset('js/search.js') }}"></script>
 </head>
 <body>
@@ -51,11 +51,6 @@
     <div class="garis-pembatas"></div>
     <main class="main-content">
         <div class="home-berita">
-            <div class="atur-berita">
-                <a href="{{ route('kategori-selector') }}">
-                    <button type="button" class="btn-atur">atur konten berita</button>
-                </a>
-            </div>
             <div class="teks">
                 <h4>update berita</h4>
             </div>
@@ -79,13 +74,8 @@
                     </div>
                 </div>
             @endforeach
-            @if ($articles->isEmpty())
-                <p>Tidak ada data artikel tersedia.</p>
-            @endif
-            <div class="lihat-semua-wrapper">
-                <a href="{{ route('homepage.paginated') }}">
-                    <button class="btn-lihat-semua">Lihat Semua Berita</button>
-                </a>
+            <div class="pagination">
+                {{ $articles->links() }}
             </div>
         </div>
         <div class="iklan2">

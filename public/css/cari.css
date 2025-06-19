@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container-navbar {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 3px; 
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 3px;
+  }
+  
+  /* Styling untuk logo */
+  .logo img {
+    width: 50px; /* Sesuaikan ukuran logo */
+    height: auto;
+  }
+  
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+  }
+  
+  /* Styling untuk search bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; /* Jarak antara search bar dan profil */
+  }
+  
+  .search-container input {
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 13px;
+    width: 300px;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, .2);
+    background-color: #D9D9D9; 
+  }
+  
+  .search-container input:focus {
+    outline: none;
+    border: 2px solid #ffffff;
+  }
+  
+  .profile img {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .container{
+    margin-top: 10px;
+  }
+
+.garis-pembatas1 {
+    height: 2px;
+    background-color: #000000;
+    margin: 0 0 10px 0;
+    width: 100%; /* bisa sesuaikan dengan layout */
+}
+
+.teks {
+  padding: 15px;
+  margin-top: 10px;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.iklan2 {
+  display: flex;
+  align-items: center;           /* vertikal */
+  justify-content: center;       /* horizontal */
+  margin: 10px auto;             /* tengah secara horizontal */
+  width: 30%;
+  box-sizing: border-box;               /* beri tinggi yang jelas */
+  background-color: #D9D9D9;
+}
+
+.cari-berita{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px;
+}
+.judul-berita h1 a{
+  text-decoration: none;
+}
+
+.judul-berita h1 a{
+  color: #000;
+}
+
+.judul-berita h1 a:hover{
+  background-color: #333;
+  color: gray;
+  transition: background-color 0.3s ease;
+  padding: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #444;
+}
+
+.pagination li.active span {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}

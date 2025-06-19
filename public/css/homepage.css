@@ -31,12 +31,27 @@
   }
   
   /* Styling untuk logo */
-  .logo img {
-    width: 50px; /* Sesuaikan ukuran logo */
-    height: auto;
+  .Nama {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
   }
-  
-  
+
+  .Nama a {
+    text-decoration: none;
+  }
+
+  /* nama1: teks merah dengan outline putih */
+  .nama1 h1 {
+      color: white;
+  }
+
+  /* nama2: teks warna #d9d9d9 dengan outline merah */
+  .nama2 h1 {
+      color: red;
+  }
+
   .navbar-right {
     display: flex;
     align-items: center;
@@ -63,12 +78,6 @@
   .search-container input:focus {
     outline: none;
     border: 2px solid #ffffff;
-  }
-  
-  .profile img {
-    width: 60px; 
-    height: 60px;
-    border-radius: 50%;
   }
 
 .navbar-kedua {
@@ -201,68 +210,108 @@
   background-color: #D9D9D9;
 }
 
-.update-berita{
+.update-berita {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* gambar + isi lebih natural */
+  align-items: flex-start; /* konten atas rata */
   width: 100%;
+  margin-bottom: 20px; /* beri jarak antar berita */
 }
 
-.gambar-berita img{
+.gambar-berita {
   width: 300px;
-  height: auto;
+  height: 170px; /* tetap agar gambar seragam */
   border-radius: 10px;
-  object-fit: cover;
+  overflow: hidden; /* potong gambar kalau tidak pas */
+  flex-shrink: 0; /* biar tidak mengecil saat resize */
+  background-color: #eee; /* fallback warna */
 }
 
-.isi-berita{
-  padding: 5px;
-  margin-left: 10px;
-}
-
-.deskripsi{
+.gambar-berita img {
   width: 100%;
-}
-.category-waktu{
-  display: flex;
-  align-items: center;
+  height: 100%;
+  object-fit: cover; /* ini penting untuk crop rapi */
+  display: block;
 }
 
-.category-waktu p{
-  margin-right: 50px;
+.isi-berita {
+  padding: 5px;
+  margin-left: 15px;
+  flex: 1;
+}
+
+.deskripsi {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.category-waktu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.category-waktu p {
+  margin-right: 30px;
+  font-size: 14px;
+  color: #555;
 }
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  gap: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.pagination a {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  background-color: #eee;
-  color: #333;
-  border-radius: 50%;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+.pagination ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
 }
 
-.pagination a:hover {
-  background-color: #333;
-  color: white;
+.pagination li {
+    margin: 0 5px;
 }
 
-.pagination .active {
-  background-color: #000;
-  color: white;
+.pagination li a,
+.pagination li span {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
+
+.pagination li.active span,
+.pagination li a:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.lihat-semua-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-lihat-semua {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-lihat-semua:hover {
+    background-color: #0056b3;
+}
+
+/* Bagian Kategori Selector */
 
 .not-found-wrapper {
     height: 80vh; /* tinggi penuh layar */
@@ -312,4 +361,53 @@
 
 .btn-homepage:hover {
     background-color: #2980b9;
+}
+
+/* Bagian Homepage part 2 */
+
+#search-results {
+  position: absolute;
+  background-color: #1e1e1e;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Setiap item */
+.search-item {
+  display: block;
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover efek */
+.search-item:hover {
+  background-color: #2c2c2c;
+}
+
+/* Judul dalam item */
+.search-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn-login {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #d9d9d9;
+    color: black;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
 }

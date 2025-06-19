@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Menjalankan seeder untuk tabel role
-        $this->call(RoleSeeder::class);
+        $this->call([
+            RoleSeeder::class,
+            BeritaSeeder::class,
+            CategorySeeder::class,
+        ]);
     }
 }

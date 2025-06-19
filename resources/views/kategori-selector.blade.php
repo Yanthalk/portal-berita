@@ -9,23 +9,37 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="{{ asset('images/logo.jpg') }}" alt="Logo">
+        <div class="Nama">
+            <a href="{{ route('homepage') }}" class="nama1">
+                <h1>Portal</h1>
+            </a>
+            <a href="{{ route('homepage') }}" class="nama2">
+                <h1>Berita</h1>
+            </a>
         </div>
         <div class="navbar-right">
             <div class="search-container">
-                <input type="text" placeholder="Search...">
+                <form action="{{ route('berita.cari') }}" method="GET" id="search-form">
+                    <input type="text" id="search-input" name="query" placeholder="Search...">
+                </form>
+                <div id="search-results" class="search-results"></div>
             </div>
             <div class="profile">
-                <img src="{{ asset('images/profile.jpg') }}" alt="Profile Picture">
+                @auth
+                    <a href="{{ route('profile') }}" class="btn-login">Profile</a>
+                @endauth
+
+                @guest
+                    <a href="{{ route('login') }}" class="btn-login">Login</a>
+                @endguest
             </div>
         </div>
     </nav>
     <div class="container-navbar">
         <nav class="navbar-kedua">
             <ul class="kategori">
-                @foreach (range(1,6) as $item)
-                    <li><a href="#">Sport</a></li>
+                @foreach (config('kategori') as $key => $label)
+                    <li><a href="#">{{ $label }}</a></li>
                 @endforeach
             </ul>
         </nav>

@@ -20,7 +20,7 @@
         <div class="error-message" style="color:red;">
           {{ $errors->first() }}
         </div>
-      @endifs
+      @endif
       
       <div class="input_box">
         <input type="text" name="login" placeholder="Enter Username or Email" required

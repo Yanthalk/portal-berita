@@ -11,7 +11,7 @@
     <main class="container-1">
         <div class="back-judul">
             <div class="back">
-                <a href="{{ url()->previous() }}">
+                <a href="{{ route('homepage') }}">
                     <i class='bx bx-arrow-back'></i>
                 </a>
             </div>
@@ -21,24 +21,27 @@
         </div>
         <div class="garis-pembatas"></div>
         <div class="bagian-profile">
-            <div class="foto-profile">
-                <h1>foto<br>profile</h1>
+            <div class="bagian1">
+                <p>Username</p>
+                <div class="username">
+                    <p>
+                        Lorem ipsum
+                    </p>
+                </div>
             </div>
-            <div class="username">
-                <p>
-                    Lorem ipsum
-                </p>
-            </div>
-            <div class="email">
-                <p>
-                    Loremipsum2456@gmail.com
-                </p>
+            <div class="bagian2">
+                <p>Email</p>
+                <div class="email">
+                    <p>
+                        Loremipsum2456@gmail.com
+                    </p>
+                </div>
             </div>
         </div>
     </main>
     <div class="container-2">
         <div class="ubah-profile">
-            <a href=#>
+            <a href="{{ route('ubah-profile') }}">
                 <p>
                     Ubah Profile
                 </p>
@@ -46,11 +49,12 @@
         </div>
         <div class="garis-pembatas"></div>
         <div class="logout-akun">
-            <a href=#>
-                <p>
-                    Logout Akun
-                </p>
-            </a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="logout-button">
+                    <p>Logout Akun</p>
+                </button>
+            </form>
         </div>
     </div>
 </body>
