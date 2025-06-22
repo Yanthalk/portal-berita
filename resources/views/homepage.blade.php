@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    @vite(['resources/css/homepage.css', 'resources/js/app.js'])
+    @vite('resources/js/app.js')
     <title>Homepage Portal Berita</title>
     <script src="{{ asset('js/search.js') }}"></script>
 </head>
