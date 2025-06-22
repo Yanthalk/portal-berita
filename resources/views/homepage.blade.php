@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
-    <link rel='stylesheet' href="https://portal-berita-production-960e.up.railway.app/resources/css/app.css">
-    <script src="https://portal-berita-production-960e.up.railway.app/resources/js/app.js" defer></script>
+    <link rel='stylesheet' href="https://portal-berita-production-960e.up.railway.app/assets/app-C_KJDeLg.css">
+    <script src="https://portal-berita-production-960e.up.railway.app/assets/app-DNxiirP_.js" defer></script>
     <title>Homepage Portal Berita</title>
     <script src="{{ asset('js/search.js') }}"></script>
 </head>
