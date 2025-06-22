@@ -1,1 +1,11 @@
 import './bootstrap';
+import '../css/homepage.css';
+import '../css/app.css';
+import '../css/cari.css';
+import '../css/caristyle.css';
+import '../css/daftarstyle.css';
+import '../css/kategori.css';
+import '../css/loginstyle.css';
+import '../css/profile.css';
+import '../css/ubah-profile.css';
+import '../css/view-berita.css';
