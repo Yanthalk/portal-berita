@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
         // Menjalankan seeder untuk tabel role
         $this->call([
             BeritaSeeder::class,
+            CategorySeeder::class,
+            RoleSeeder::class,
+            UpdateGambarBeritaSeeder::class,
         ]);
     }
 }
