@@ -6,6 +6,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     @vite('resources/js/app.js')
     <title>Homepage Portal Berita</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/search.js') }}"></script>
 </head>
 <body>
