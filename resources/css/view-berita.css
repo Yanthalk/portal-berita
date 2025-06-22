@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container-navbar {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 3px; 
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 3px;
+  }
+  
+  /* Styling untuk logo */
+  .Nama {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+  }
+
+  .Nama a {
+    text-decoration: none;
+  }
+
+  /* nama1: teks merah dengan outline putih */
+  .nama1 h1 {
+      color: red;
+  }
+
+  /* nama2: teks warna #d9d9d9 dengan outline merah */
+  .nama2 h1 {
+      color: white;
+  }
+  
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+  }
+  
+  /* Styling untuk search bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; /* Jarak antara search bar dan profil */
+  }
+  
+  .search-container input {
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 13px;
+    width: 300px;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, .2);
+    background-color: #D9D9D9; 
+  }
+  
+  .search-container input:focus {
+    outline: none;
+    border: 2px solid #ffffff;
+  }
+  
+  .btn-login {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: #d9d9d9;
+      color: black;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+  }
+
+  .btn-login:hover {
+      background-color: #0056b3;
+  }
+
+
+.navbar-kedua {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #000000;
+    color: white;
+    width: 100%;
+  }
+  
+  .kategori {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .kategori li {
+    list-style-type: none; /* hilangkan bullet point */
+    display: inline-block; /* supaya li berjajar horizontal */
+    margin-right: 50px;    /* beri jarak antar kategori */
+  }
+
+  .kategori li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 2px solid #333;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-transform: capitalize;
+    background-color: #D9D9D9; 
+  }
+  
+  .kategori li a:hover {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .iklan1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+    height: 150px;
+    background-color: #D9D9D9;
+  }
+
+  .main-content {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .post-berita {
+    width: 70%;
+    padding: 10px 15px 0px 30px;
+    box-sizing: border-box;
+  }
+
+  .iklan2 {
+    display: flex;
+    align-items: center;           /* vertikal */
+    justify-content: center;       /* horizontal */
+    margin: 10px auto;             /* tengah secara horizontal */
+    width: 30%;
+    box-sizing: border-box;               /* beri tinggi yang jelas */
+    background-color: #D9D9D9;
+  }
+
+.garis-pembatas {
+    height: 2px;
+    background-color: #000000;
+    margin: 10px auto;
+    width: 100%; /* bisa sesuaikan dengan layout */
+}
+
+  .judul-berita {
+    margin-bottom: 10px;
+  }
+
+  .judul-berita h1{
+    font-size: 35px;
+    text-transform: capitalize;
+  }
+
+  .keterangan{
+    font-size: 15px;
+    margin: 15px 0 10px 0;
+  }
+
+  .keterangan a{
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  .jurnalis{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0 15px 0;
+  }
+
+  .jurnalis p{
+    text-transform: capitalize;
+  }
+
+  .cover-berita img{
+    height: auto;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: 2px solid black;
+  }
+
+  .cover-berita{
+    margin: 20px 0 15px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .isi-berita{
+    margin: 20px 0 15px 0;
+  }
+
+  .action-button{
+    background-color: #D9D9D9;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    display: flex;
+    margin: 40px auto;
+    gap: 96px;  
+  }
+
+  .action-button button {
+    padding: 10px 16px;
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .action-button button:hover {
+    background-color: #000000;
+  }
+
+  .judul-komentar-berita{
+    margin: 10px 0 10px 0;
+  }
+
+  .komentar-section{
+    background-color: #D9D9D9;
+    border: 2px solid #000000;
+    border-radius: 10px;
+  }
+
+  /* Bagian input komentar */
+  .tulis-komentar {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 10px;
+  }
+
+.tulis-komentar input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.tulis-komentar input:focus {
+  border-color: #4a90e2;
+}
+
+.send-button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 0 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:hover {
+  background-color: #357ABD;
+}
+
+/* Bagian komentar */
+.comment {
+  display: flex;
+  gap: 12px;
+  padding: 12px 28px;
+  align-items: flex-start;
+}
+/* Bagian teks komentar */
+.comment-section {
+  flex: 1;
+}
+
+/* Header komentar (nama & waktu) */
+.comment-header {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.username {
+  font-weight: 600;
+  color: #222;
+}
+
+.time-elapsed {
+  font-style: italic;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Isi komentar */
+.comment-text {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.komentar-login-warning {
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #444;
+    width: 500px;
+    border-radius: 6px;
+    padding: 50px;
+    font-size: 16px;
+    color: #fdfcfc;
+}
+
+.btn-login-komentar {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-login-komentar:hover {
+    background-color: #0056b3;
+}
+
