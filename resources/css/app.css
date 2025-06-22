@@ -10,6 +10,4 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-@import "tailwindcss";
-
 @tailwind utilities;
