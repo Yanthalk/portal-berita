@@ -28,4 +28,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function komentar()
+    {
+        return $this->hasMany(Komentar::class, 'user_id', 'user_id');
+    }
+
 }

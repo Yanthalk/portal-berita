@@ -31,9 +31,25 @@
   }
   
   /* Styling untuk logo */
-  .logo img {
-    width: 50px; /* Sesuaikan ukuran logo */
-    height: auto;
+  .Nama {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+  }
+
+  .Nama a {
+    text-decoration: none;
+  }
+
+  /* nama1: teks merah dengan outline putih */
+  .nama1 h1 {
+      color: red;
+  }
+
+  /* nama2: teks warna #d9d9d9 dengan outline merah */
+  .nama2 h1 {
+      color: white;
   }
   
   
@@ -65,11 +81,21 @@
     border: 2px solid #ffffff;
   }
   
-  .profile img {
-    width: 60px; 
-    height: 60px;
-    border-radius: 50%;
+  .btn-login {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: #d9d9d9;
+      color: black;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
   }
+
+  .btn-login:hover {
+      background-color: #0056b3;
+  }
+
 
 .navbar-kedua {
     display: flex;
@@ -181,21 +207,6 @@
     margin: 20px 0 15px 0;
   }
 
-  .jurnalis img{
-    width: 50px;
-    height: auto;
-    border-radius: 50%;
-    align-items: center;
-  }
-
-  .jurnalis img + img {
-    margin-left: 15px; 
-  }
-
-  .jurnalis img:last-of-type {
-    margin-right: 30px;
-  }
-
   .jurnalis p{
     text-transform: capitalize;
   }
@@ -248,7 +259,7 @@
     margin: 10px 0 10px 0;
   }
 
-  .komentar{
+  .komentar-section{
     background-color: #D9D9D9;
     border: 2px solid #000000;
     border-radius: 10px;
@@ -258,13 +269,12 @@
   .tulis-komentar {
     display: flex;
     gap: 8px;
-    margin-bottom: 20px;
     padding: 12px 16px;
     border-radius: 10px;
   }
 
-.tulis-komentar input[type="text"] {
-  flex-grow: 1;
+.tulis-komentar input {
+  width: 100%;
   padding: 10px 14px;
   border: 1px solid #ccc;
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
@@ -274,7 +284,7 @@
   transition: border-color 0.3s;
 }
 
-.tulis-komentar input[type="text"]:focus {
+.tulis-komentar input:focus {
   border-color: #4a90e2;
 }
 
@@ -300,20 +310,9 @@
 .comment {
   display: flex;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 12px 28px;
   align-items: flex-start;
 }
-
-/* Foto profil */
-.profile-pic {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid #000000;
-  object-fit: cover;
-  background-color: #ddd; /* jika gambar kosong */
-}
-
 /* Bagian teks komentar */
 .comment-section {
   flex: 1;
@@ -347,17 +346,31 @@
   color: #444;
 }
 
-/* Aksi tombol like/dislike */
-.comment-actions button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  gap: 12px;
-  transition: transform 0.2s;
+.komentar-login-warning {
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #444;
+    width: 500px;
+    border-radius: 6px;
+    padding: 50px;
+    font-size: 16px;
+    color: #fdfcfc;
 }
 
-.comment-actions button:hover {
-  transform: scale(1.2);
-  color: #4a90e2;
+.btn-login-komentar {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
+
+.btn-login-komentar:hover {
+    background-color: #0056b3;
+}
+

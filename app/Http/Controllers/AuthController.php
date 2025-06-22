@@ -11,6 +11,9 @@ class AuthController extends Controller
 {
     public function showLogin()
     {
+        if (!session()->has('url.intended')) {
+            session(['url.intended' => url()->previous()]);
+        }
         return view('login');
     }
 
@@ -38,7 +41,7 @@ class AuthController extends Controller
                 Cookie::queue(Cookie::forget('remembered_nama'));
             }
 
-            return redirect()->route('homepage');
+            return redirect()->intended(route('homepage'));
         }
 
         return back()->withErrors(['message' => 'Username atau password salah']);

@@ -8,6 +8,12 @@
     <title>Profile</title>
 </head>
 <body>
+    @if(session('success'))
+        <div id="alert-success" class="alert-success">
+            <i class='bx bx-check-circle' style="margin-right: 8px;"></i>
+            {{ session('success') }}
+        </div>
+    @endif
     <main class="container-1">
         <div class="back-judul">
             <div class="back">
@@ -19,22 +25,18 @@
                 <h1>profile saya</h1>
             </div>
         </div>
-        <div class="garis-pembatas"></div>
+        <div class="garis-pembatas"></div>       
         <div class="bagian-profile">
             <div class="bagian1">
                 <p>Username</p>
                 <div class="username">
-                    <p>
-                        Lorem ipsum
-                    </p>
+                    <p>{{ $user->nama }}</p>
                 </div>
             </div>
             <div class="bagian2">
                 <p>Email</p>
                 <div class="email">
-                    <p>
-                        Loremipsum2456@gmail.com
-                    </p>
+                    <p>{{ $user->email }}</p>
                 </div>
             </div>
         </div>
@@ -57,5 +59,18 @@
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const alert = document.getElementById('alert-success');
+            if (alert) {
+                setTimeout(() => {
+                    alert.classList.add('hide'); // mulai animasi fade-out
+                    setTimeout(() => {
+                        alert.remove(); // hapus elemen dari DOM setelah animasi
+                    }, 1000); // 1000ms = durasi animasi CSS
+                }, 5000); // tampil selama 5 detik
+            }
+        });
+    </script>
 </body>
 </html>

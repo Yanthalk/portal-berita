@@ -3,43 +3,30 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
+use App\Models\Category;
 
 class BeritaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        $dummyData = [
-            [
-                'judul' => 'Berita Politik Terbaru',
-                'konten' => 'Isi konten tentang berita politik...',
-                'tanggal_publish' => Carbon::now(),
-                'status_berita' => 'aktif',
-                'user_id' => 3,
-                'category_id' => 1,
-            ],
-            [
-                'judul' => 'Berita Teknologi Masa Kini',
-                'konten' => 'Isi konten tentang teknologi terkini...',
-                'tanggal_publish' => Carbon::now()->subDays(1),
-                'status_berita' => 'aktif',
-                'user_id' => 3,
-                'category_id' => 2,
-            ],
-            [
-                'judul' => 'Berita Kesehatan Terkini',
-                'konten' => 'Tips kesehatan dan info terbaru...',
-                'tanggal_publish' => Carbon::now()->subDays(2),
-                'status_berita' => 'nonaktif',
-                'user_id' => 3,
-                'category_id' => 3,
-            ],
-        ];
+        $kategori = Category::all();
 
-        DB::table('berita')->insert($dummyData);
+        foreach ($kategori as $kategoriItem) {
+            for ($i = 1; $i <= 5; $i++) {
+                DB::table('berita')->insert([
+                    'judul'           => "Contoh Berita {$kategoriItem->nama_kategori} #{$i}",
+                    'konten'          => "Ini deskripsi singkat untuk berita {$kategoriItem->nama_kategori} ke-{$i}.",
+                    'isi'             => "Konten lengkap untuk berita {$kategoriItem->nama_kategori} ke-{$i}.",
+                    'gambar'          => null, // atau isi dengan 'images/berita.jpg' jika sudah ada
+                    'penulis'         => 'Admin',
+                    'tanggal_publish' => Carbon::now()->subMinutes($i * 1),
+                    'user_id'         => 3,
+                    'category_id'     => $kategoriItem->category_id,
+                ]);
+            }
+        }
     }
 }

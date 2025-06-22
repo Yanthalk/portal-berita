@@ -20,25 +20,26 @@
             </div>
         </div>
         <div class="garis-pembatas"></div>
-        <div class="teks2">
-            <p>
-                Ubah Username
-            </p>
-        </div>
-        <div class="enter-username">
-            <input type="text" name="username" placeholder="Enter Username" required>
-        </div>
-        <div class="teks2">
-            <p>
-                Ubah Email
-            </p>
-        </div>
-        <div class="enter-username">
-            <input type="text" name="username" placeholder="Enter Email" required>
-        </div>
-        <div class="container-btn">
-            <button type="submit" class="btn">Simpan</button>
-        </div>
+
+        {{-- Pindahkan form ke dalam main --}}
+        <form action="{{ route('ubah-profile.update') }}" method="POST">
+            @csrf
+            <div class="teks2">
+                <p>Ubah Username</p>
+            </div>
+            <div class="enter-username">
+                <input type="text" name="nama" placeholder="Enter Username" value="{{ old('nama', $user->nama) }}" required>
+            </div>
+            <div class="teks2">
+                <p>Ubah Email</p>
+            </div>
+            <div class="enter-username">
+                <input type="email" name="email" placeholder="Enter Email" value="{{ old('email', $user->email) }}" required>
+            </div>
+            <div class="container-btn">
+                <button type="submit" class="btn">Simpan</button>
+            </div>
+        </form>
     </main>
 </body>
 </html>

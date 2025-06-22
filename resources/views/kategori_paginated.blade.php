@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
-    <title>Halaman Berita - Portal Berita</title>
-    <script src="{{ asset('js/search.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/kategori.css') }}">
+    <title>Kategori Berita</title>
 </head>
 <body>
     <nav class="navbar">
@@ -51,42 +50,56 @@
     <div class="garis-pembatas"></div>
     <main class="main-content">
         <div class="home-berita">
-            <div class="teks">
-                <h4>update berita</h4>
+            <div class="kategori1">
+                <h1>{{ $kategori }}</h1>
             </div>
             <div class="garis-pembatas1"></div>
-            @foreach ($articles as $article)
+            <div class="teks">
+                <h4>Update Berita</h4>
+            </div>
+            <div class="garis-pembatas1"></div>
+
+            {{-- Update Berita --}}
+            @foreach ($articles as $berita)
                 <div class="update-berita">
                     <div class="gambar-berita">
-                        <img src="{{ $article['image_url'] ?? asset('images/post-berita.jpg') }}" alt="post-berita">
+                        <img src="{{ $berita['image_url'] ?? asset('images/post-berita.jpg') }}" alt="post-berita">
                     </div>
                     <div class="isi-berita">
                         <div class="judul">
-                            <h1>{{ $article['title'] ?? 'Judul Tidak Tersedia' }}</h1>
+                            <h1>{{ $berita['title'] }}</h1>
                         </div>
                         <div class="deskripsi">
-                            <p>{{ $article['description'] ?? 'Tidak ada deskripsi.' }}</p>
+                            <p>{{ $berita['description'] ?? 'Tidak ada deskripsi.' }}</p>
                         </div>
                         <div class="category-waktu">
-                            <p>{{ ucfirst($article['category'][0] ?? 'Umum') }}</p>
-                            <p>{{ \Carbon\Carbon::parse($article['pubDate'])->translatedFormat('d F Y, H:i') }}</p>
+                            <p>{{ ucfirst($berita['category'][0] ?? 'umum') }}</p>
+                            <p>{{ $berita['pubDate'] ? \Carbon\Carbon::parse($berita['pubDate'])->translatedFormat('d F Y, H:i') : '-' }}</p>
+                            <p>
+                                <span class="asal-berita" style="font-style: italic; font-size: 12px; color: gray;">
+                                    Sumber: {{ $berita['source'] === 'api' ? 'News API' : 'Lokal' }}
+                                </span>
+                            </p>
                         </div>
                         <div class='selengkapnya'>
-                            <a href="{{ route('view-berita', ['id' => $article['id'], 'source' => $article['source']]) }}">
+                            <a href="{{ route('view-berita', ['id' => $berita['id'], 'source' => $berita['source']]) }}">
                                 Baca Selengkapnya
                             </a>
                         </div>
                     </div>
                 </div>
             @endforeach
+
+            {{-- Pagination --}}
             <div class="pagination-container">
                 <div class="pagination-links">
                     {{ $articles->onEachSide(1)->links('vendor.pagination.no-prev-next') }}
                 </div>
             </div>
         </div>
+
         <div class="iklan2">
-            <h1>iklan</h1>
+            <h1>Iklan</h1>
         </div>
     </main>
 </body>

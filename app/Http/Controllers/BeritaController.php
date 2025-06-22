@@ -17,6 +17,7 @@ class BeritaController extends Controller
             return response()->json([]);
         }
 
+
         $localResults = Berita::where('judul', 'LIKE', "%{$query}%")
             ->limit(5)
             ->get()
@@ -28,9 +29,11 @@ class BeritaController extends Controller
                 ];
             });
 
+
         $newsService = new NewsDataService();
         $apiResponse = $newsService->search($query);
         $apiResults = [];
+
 
         if (isset($apiResponse['results'])) {
             $apiResults = collect($apiResponse['results'])
@@ -44,6 +47,7 @@ class BeritaController extends Controller
                     ];
                 });
         }
+
 
         $results = $localResults->merge($apiResults);
         return response()->json($results);
@@ -60,7 +64,11 @@ class BeritaController extends Controller
                     'source' => 'local',
                     'judul' => $berita->judul,
                     'id' => $berita->news_id,
-                    'url' => route('berita.show', $berita->news_id)
+                    'description' => $berita->konten,
+                    'image_url' => $berita->gambar ? asset('storage/' . $berita->gambar) : null,
+                    'pubDate' => $berita->tanggal_publish,
+                    'category' => [$berita->category->nama_kategori ?? 'Umum'],
+                    'url' => route('view-berita', ['id' => $berita->news_id, 'source' => 'local']),
                 ];
             });
 
@@ -70,20 +78,24 @@ class BeritaController extends Controller
 
         if (isset($apiResponse['results'])) {
             $apiResults = collect($apiResponse['results'])
-                ->take(5)
-                ->map(function ($article, $index) {
+                ->take(10)
+                ->map(function ($article) {
                     return [
                         'source' => 'api',
-                        'id' => $index,
                         'judul' => $article['title'],
-                        'url' => $article['link'],
+                        'id' => $article['article_id'] ?? uniqid(),
+                        'description' => $article['description'] ?? '',
+                        'image_url' => $article['image_url'] ?? asset('images/post-berita.jpg'),
+                        'pubDate' => $article['pubDate'] ?? now(),
+                        'category' => is_array($article['category']) ? $article['category'] : [$article['category'] ?? 'Umum'],
+                        'url' => route('view-berita', ['id' => $article['article_id'] ?? uniqid(), 'source' => 'api']),
                     ];
                 });
         }
 
         $combined = $localResults->concat($apiResults);
 
-        $perPage = 5;
+        $perPage = 10;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
         $currentItems = $combined->slice(($currentPage - 1) * $perPage, $perPage)->values();
         $paginator = new LengthAwarePaginator(
@@ -100,9 +112,4 @@ class BeritaController extends Controller
         ]);
     }
 
-    public function show($id)
-    {
-        $berita = Berita::findOrFail($id);
-        return view('view-berita', compact('berita'));
-    }
 }

@@ -13,12 +13,10 @@ class Berita extends Model
 
     protected $fillable = [
         'judul',
-        'deskripsi',
         'konten',
         'isi',
         'gambar',
         'penulis',
-        'negara',
         'tanggal_publish',
         'user_id',
         'category_id',
@@ -35,4 +33,10 @@ class Berita extends Model
     {
         return $this->belongsTo(Category::class, 'category_id', 'category_id');
     }
+
+    public function komentar()
+    {
+        return $this->hasMany(Komentar::class, 'news_id', 'news_id');
+    }
+
 }

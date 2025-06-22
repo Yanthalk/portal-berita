@@ -12,10 +12,10 @@
     <nav class="navbar">
         <div class="Nama">
             <a href="{{ route('homepage') }}" class="nama1">
-                <h1>Portal</h1>
+                <h1>Hot</h1>
             </a>
             <a href="{{ route('homepage') }}" class="nama2">
-                <h1>Berita</h1>
+                <h1>News</h1>
             </a>
         </div>
         <div class="navbar-right">
@@ -40,7 +40,7 @@
         <nav class="navbar-kedua">
             <ul class="kategori">
                 @foreach (config('kategori') as $key => $label)
-                    <li><a href="{{ route('kategori') }}">{{ $label }}</a></li>
+                    <li><a href="{{ route('kategori.show', ['slug' => $key]) }}">{{ $label }}</a></li>
                 @endforeach
             </ul>
         </nav>
@@ -70,6 +70,11 @@
                         <div class="category-waktu">
                             <p>{{ ucfirst($article['category'][0] ?? 'Umum') }}</p>
                             <p>{{ \Carbon\Carbon::parse($article['pubDate'])->translatedFormat('d F Y, H:i') }}</p>
+                        </div>
+                        <div class='selengkapnya'>
+                            <a href="{{ route('view-berita', ['id' => $article['id'], 'source' => $article['source']]) }}">
+                                Baca Selengkapnya
+                            </a>
                         </div>
                     </div>
                 </div>
