@@ -1,4 +1,9 @@
 {
+  "resources/css/homepage.css": {
+    "file": "assets/homepage-CTSVCaKf.css",
+    "src": "resources/css/homepage.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
     "file": "assets/app-DT9G5QLG.js",
     "name": "app",
